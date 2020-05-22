@@ -33,5 +33,6 @@ sed -i "s/SBC_NAME/$SBC_NAME/g" /etc/kamailio/tls.cfg
 ####  fix Dispatcher file ####
 sed -i "s/SBC_NAME/$SBC_NAME/g" /etc/kamailio/dispatcher.list
 sed -i "s/MY_IP/$MY_IP/g" /etc/kamailio/dispatcher.list
+sed -i "s/SBC_PORT/$SBC_PORT/g" /etc/kamailio/dispatcher.list
 
 eval "kamailio -DD -E"
