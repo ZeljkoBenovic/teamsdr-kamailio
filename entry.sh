@@ -26,6 +26,7 @@ sed -i "s/from_uri =~ \".*\" + PBX_IP/from_uri =~ \".*\" + \"$PBX_IP\"/g" /etc/k
 sed -i "s/PBX_IP/$PBX_IP/g" /etc/kamailio/kamailio.cfg
 sed -i "s/PBX_PORT/$PBX_PORT/g" /etc/kamailio/kamailio.cfg
 sed -i "s/HOST_IP/$HOST_IP/g" /etc/kamailio/kamailio.cfg
+sed -i "s/UDP_SIP_PORT/$UDP_SIP_PORT/g" /etc/kamailio/kamailio.cfg
 
 ###### fix Kamailio TLS file
 sed -i "s/SBC_NAME/$SBC_NAME/g" /etc/kamailio/tls.cfg
