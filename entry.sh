@@ -1,6 +1,7 @@
 #!/bin/bash
 
-MY_IP=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/'`
+#MY_IP=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/'`
+MY_IP=`ip addr | grep 'state UP' -A2 | grep -w 'inet' | awk '{print $2}' | awk -F/ '{print $1}'`
 
 if [ "$NEW_CONFIG" = "true" ]; then
 	cp /kamailio.cfg /etc/kamailio/kamailio.cfg
