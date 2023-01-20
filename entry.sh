@@ -31,6 +31,7 @@ sed -i "s/UDP_SIP_PORT/$UDP_SIP_PORT/g" /etc/kamailio/kamailio.cfg
 
 ###### fix Kamailio TLS file
 sed -i "s/SBC_NAME/$SBC_NAME/g" /etc/kamailio/tls.cfg
+sed -i "s/CERT_FOLDER_NAME/$CERT_FOLDER_NAME/g" /etc/kamailio/tls.cfg
 
 ####  fix Dispatcher file ####
 sed -i "s/SBC_NAME/$SBC_NAME/g" /etc/kamailio/dispatcher.list
