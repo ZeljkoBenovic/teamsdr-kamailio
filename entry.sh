@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 
-#MY_IP=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1  -d'/'`
 MY_IP=`ip addr | grep 'state UP' -A2 | grep -w 'inet' | awk '{print $2}' | awk -F/ '{print $1}'`
 
 if [ "$NEW_CONFIG" = "true" ]; then
@@ -31,6 +30,7 @@ sed -i "s/UDP_SIP_PORT/$UDP_SIP_PORT/g" /etc/kamailio/kamailio.cfg
 
 ###### fix Kamailio TLS file
 sed -i "s/SBC_NAME/$SBC_NAME/g" /etc/kamailio/tls.cfg
+sed -i "s/CERT_FOLDER_NAME/$CERT_FOLDER_NAME/g" /etc/kamailio/tls.cfg
 
 ####  fix Dispatcher file ####
 sed -i "s/SBC_NAME/$SBC_NAME/g" /etc/kamailio/dispatcher.list
